@@ -1,0 +1,5 @@
+aws deploy register-application-revision --application-name SampleProject-Deploy --s3-location bundleType=tar,eTag=0367cf707d5f4ea95779b06005d14896,bucket=cloudguru-lessons,key=demoRevision.tar --profile code-deploy
+
+aws deploy create-deployment-config --deployment-config-name 10Percent --minimum-healthy-hosts value=10,type=FLEET_PERCENT
+
+aws deploy push --application-name SampleProject-Deploy --s3-location s3://cloudguru-lessons/Project1.zip --ignore-hidden-files --source . --profile code-deploy
